@@ -2,22 +2,6 @@ import React from "react";
 import { mainStyle } from "./tableListStyle";
 import Button from "../shared/button";
 const headerTable = ["ID", "Name", "Phone", "Email", "Susspended", "Action"];
-const data = [
-  {
-    id: 1,
-    name: "John Doe",
-    phone: "+62888888888",
-    email: "john@gmail.com",
-    suspended: 0
-  },
-  {
-    id: 2,
-    name: "Jane Doe",
-    phone: "+62888888887",
-    email: "jane@gmail.com",
-    suspended: 1
-  }
-];
 const TableTourGuide = props => (
   <table id="customers">
     <tr>
@@ -25,7 +9,7 @@ const TableTourGuide = props => (
         return <th key={index}>{headTableContent}</th>;
       })}
     </tr>
-    {data.map((data, index) => {
+    {props.data.map((data, index) => {
       return (
         data.suspended === 1 && (
           <tr>
